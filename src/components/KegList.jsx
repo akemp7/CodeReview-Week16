@@ -19,8 +19,6 @@ function KegList(props) {
 
         <div>
             <Navbar />
-            <h3>Our Current List</h3>
-            <hr />
             <div>
 
                 {props.kegList.map((keg) =>

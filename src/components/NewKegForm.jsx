@@ -37,12 +37,14 @@ function NewKegForm(props){
                     id='flavor'
                     placeholder='Flavor'
                     ref={(input) => { _flavor = input; }} />
+                <button type='submit'>Submit new Kombucha</button>
+                
             </form>
         </div>
     );
 }
 
-NewKegFrom.propTypes = {
+NewKegForm.propTypes = {
     onNewKegCreation: PropTypes.func
 };
 

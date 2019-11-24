@@ -1,12 +1,14 @@
 import React from 'react';
 import NewKegForm from './NewKegForm';
-import KegList from './KegList';
+import Navbar from './Navbar';
+
 
 function NewKegControl(props) {
     return (
         <div>
+            <Navbar/>
             <NewKegForm onNewKegCreation =  {props.handleAddingNewKegToList} />
-            <KegList kegList = {props.kegList} />
+           
         </div>
     );
 }
