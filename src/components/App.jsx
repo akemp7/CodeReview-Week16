@@ -9,7 +9,7 @@ function App() {
         <div>
             <Switch>
                 <Route exact path="/" component={Home} />
-                <Route path="/list" component={KegList} />
+                <Route path="/list" component={NewKegControl} />
                 <Route path="/order" component={OrderForm} />
             </Switch>
         </div>

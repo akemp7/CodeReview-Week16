@@ -8,6 +8,7 @@ function OrderForm() {
     }
     return (
         <div>
+            <Navbar />
             <h3 style={orderStyle}>Order Your Keg Here!</h3>
             <p style={orderStyle}>Minimum of 2 kegs per order.</p>
             <hr />
@@ -23,7 +24,6 @@ function OrderForm() {
                     placeholder='How Many Kegs' />
                 <button type="submit" className="btn-btn">Place my order!</button>
             </form>
-            <Navbar />
         </div>
     );
 }
