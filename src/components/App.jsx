@@ -1,19 +1,70 @@
 import React from 'react';
 import Home from './Home';
 import KegList from './KegList';
-import OrderForm from './OrderForm';
+import NewKegControl from './NewKegControl';
 import { Switch, Route } from 'react-router-dom';
 
-function App() {
-    return (
-        <div>
-            <Switch>
-                <Route exact path="/" component={Home} />
-                <Route path="/list" component={NewKegControl} />
-                <Route path="/order" component={OrderForm} />
-            </Switch>
-        </div>
-    );
+class App extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            masterKegList : []
+        };
+    this.handleAddingNewKegToList = this.handleAddingNewKegToList.bind(this);
+    }
+
+    handleAddingNewKegToList(newKeg) {
+        let temp= this.state.masterKegList.slice();
+        temp.push(newKeg);
+        this.setState({masterKegList: temp});
+    }
+
+    render(){
+        return(
+            <div>
+               <Switch>
+                   <Route exact path='/' component={Home}></Route>
+                    <Route path='/list' render={() => <KegList kegList={this.state.masterKegList} />} />
+                    <Route path='/newkeg' render={() => <NewKegControl onNewKegCreation={this.handleAddingNewKegToList} />} />
+                   <Route path='/order' component={OrderForm}></Route>
+               </Switch>
+            </div>
+        );
+    }
+  
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React from 'react';
+// import Home from './Home';
+// import KegList from './KegList';
+// import OrderForm from './OrderForm';
+// import { Switch, Route } from 'react-router-dom';
+
+// function App() {
+//     return (
+//         <div>
+//             <Switch>
+//                 <Route exact path="/" component={Home} />
+//                 <Route path="/list" component={NewKegControl} />
+//                 <Route path="/order" component={OrderForm} />
+//             </Switch>
+//         </div>
+//     );
+// }
+
+// export default App;
