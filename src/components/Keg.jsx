@@ -25,8 +25,15 @@ class Keg extends React.Component {
 render() {
     return (
         <div>
-            <p>Name: {this.props.name}</p>
-            <p>Brand: {this.props.brand}</p>
+            <div className="container">
+                <p>Name: {this.props.name}</p>
+                <ul>
+                    <li>Brand: {this.props.brand}</li>
+                    <li>Flavor: {this.props.flavor}</li>
+                    <li>Price: {this.props.price}</li>
+                    <li>Amount: {this.props.amount}</li>
+                </ul>
+            </div>
         </div>
         );
     }
@@ -38,30 +45,3 @@ Keg.propTypes = {
 };
 
 export default Keg;
-
-
-
-// function Keg(props) {
-//     var propsStyle = {
-//         textAlign: "center"
-//     }
-//     return (
-//         <div className="container">
-//             <p style={propsStyle}> {props.name}</p>
-//             <ul>
-//                 <li>Brand: {props.brand}</li>
-//                 <li>Price: {props.price}</li>
-//                 <li>Flavor: {props.flavor}</li>
-//             </ul>
-//         </div>
-//     );
-// }
-
-// Keg.propTypes = {
-//     name: PropTypes.string,
-//     brand: PropTypes.string,
-//     price: PropTypes.string,
-//     flavor: PropTypes.string
-// };
-
-// export default Keg;
