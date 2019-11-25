@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
+import Navbar from './Navbar';
 
 function NewKegForm(props){
     let _name = null;
@@ -20,6 +21,7 @@ function NewKegForm(props){
 
     return (
         <div>
+            <Navbar />
             <form onSubmit={handleNewSubmission}>
                 <input type='text'
                     id='name'

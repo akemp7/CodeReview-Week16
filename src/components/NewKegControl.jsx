@@ -1,16 +1,28 @@
 import React from 'react';
-import NewKegForm from './NewKegForm';
+import Keg from './Keg';
 import Navbar from './Navbar';
+import PropTypes from 'prop-types';
 
-
-function NewKegControl(props) {
+function NewKegControl (props) {
     return (
         <div>
-            <Navbar/>
-            <NewKegForm onNewKegCreation =  {props.handleAddingNewKegToList} />
-           
+            <Navbar />
+            <div>
+                {props.kegList.map((keg) =>
+                    <Keg name={keg.name}
+                        brand={keg.brand}
+                        price={keg.price}
+                        flavor={keg.flavor}
+                        key={keg.id} />
+
+                )}
+            </div>
         </div>
     );
 }
+
+NewKegControl.propTypes = {
+    kegList: PropTypes.array
+};
 
 export default NewKegControl;
