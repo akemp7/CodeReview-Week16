@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 function Navbar() {
     var navStyling = {
         float: "left",
-        // display: "block",
         marginLeft: "200px",
         marginRight: "5%",
         textAlign: "center",
